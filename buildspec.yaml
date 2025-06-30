@@ -12,21 +12,25 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
+      - echo "Verificando versión de Node.js"
       - node --version
-      - echo "installed node "
     # steps:
   pre_build:
     commands:
+      - echo "Autenticando en Docker Hub..."
+      - docker login -u $USERNAME -p $PASSWORD
+      - echo "Instalando dependencias..."
       - npm install
-      - echo "dependencies installed"
+      - echo "Dependencias instaladas correctamente."
   build:
     commands:
+      - echo "Construyendo imagen Docker..."
       - docker build . -t dhruvdarji123/netflix-react-app:latest --build-arg TMDB_V3_API_KEY=$KEY
   post_build:
     commands:
-      - echo "waiting right now"
-      - docker login -u $USERNAME -p $PASSWORD
+      - echo "Subiendo imagen a Docker Hub..."
       - docker push dhruvdarji123/netflix-react-app:latest
+      - echo "Build completado exitosamente."
 artifacts:
   files:
     - '**/*'
