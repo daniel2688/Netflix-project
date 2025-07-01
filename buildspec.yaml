@@ -29,7 +29,7 @@ phases:
   post_build:
     commands:
       - echo "Subiendo imagen a Docker Hub..."
-      - docker push dhruvdarji123/netflix-react-app:latest
+      - docker push daniel2688/netflix-react-app:latest
       - echo "Build completado exitosamente."
 artifacts:
   files:
