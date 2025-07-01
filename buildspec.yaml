@@ -25,11 +25,11 @@ phases:
   build:
     commands:
       - echo "Construyendo imagen Docker..."
-      - docker build . -t daniel2688/netflix-react-app:latest --build-arg TMDB_V3_API_KEY=$KEY
+      - docker build . -t daniel2688/netflix-react-app --build-arg TMDB_V3_API_KEY=$KEY
   post_build:
     commands:
       - echo "Subiendo imagen a Docker Hub..."
-      - docker push daniel2688/netflix-react-app:latest
+      - docker push daniel2688/netflix-react-app
       - echo "Build completado exitosamente."
 artifacts:
   files:

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 CONTAINER_NAME=netflix
-IMAGE_NAME=daniel2688/netflix-react-app:latest
+IMAGE_NAME=daniel2688/netflix-react-app
 
 # Detener y eliminar el contenedor si existe
 if [ "$(docker ps -aq -f name=$CONTAINER_NAME)" ]; then
