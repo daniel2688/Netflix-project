@@ -1,15 +1,12 @@
 #!/bin/bash
 
-echo "Limpiando directorio antiguo de la app..."
+echo "Eliminando aplicación anterior..."
 
-# Ruta donde se despliega tu app (ajusta si tu ruta es diferente)
-APP_DIR="/home/ec2-user/app"
+# Forzar eliminación con permisos de root y sin errores si hay problemas
+rm -rf /home/ec2-user/app || {
+  echo "Fallo al eliminar la carpeta, intentando con sudo chown..."
+  sudo chown -R ec2-user:ec2-user /home/ec2-user/app
+  sudo rm -rf /home/ec2-user/app
+}
 
-# Si existe el directorio, lo limpia completamente
-if [ -d "$APP_DIR" ]; then
-  rm -rf ${APP_DIR:?}/*
-  echo "Directorio $APP_DIR limpiado correctamente."
-else
-  echo "El directorio $APP_DIR no existe, creando..."
-  mkdir -p "$APP_DIR"
-fi
+echo "Carpeta anterior eliminada."
