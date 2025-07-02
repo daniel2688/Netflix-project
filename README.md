@@ -1,12 +1,12 @@
-# DevOps Project 21: CI/CD Pipeline con AWS
+# Proyecto DevOps: CI/CD Pipeline con AWS
 
-Este repositorio contiene el proyecto **DevOps Project 21**, enfocado en la implementación de un pipeline de CI/CD (Integración Continua/Entrega Continua) utilizando servicios de AWS para automatizar el proceso de desarrollo, pruebas y despliegue de aplicaciones.
+Este repositorio contiene el proyecto **Netflix-project**, enfocado en la implementación de un pipeline de CI/CD (Integración Continua/Entrega Continua) utilizando servicios de AWS para automatizar el proceso de desarrollo, pruebas y despliegue de aplicaciones.
 
-## Descripción del Proyecto
+## Descripción del Proyecto:
 
 Este proyecto implementa una solución completa de CI/CD en AWS que permite a los equipos de desarrollo entregar código de manera rápida y confiable. La solución utiliza varios servicios de AWS para crear un pipeline automatizado que abarca desde el control de código fuente hasta el despliegue en producción.
 
-## Arquitectura de la Solución
+## Arquitectura de la Solución:
 
 ![Arquitectura CI/CD AWS](/images/arquitectura-cicd-aws.gif)
 
@@ -20,7 +20,7 @@ La arquitectura implementada consta de los siguientes componentes:
 - **DockerHub**: Repositorio para las imagenes construidas.
 - **Parameter Store**: Guardar las credenciales de DockerHub y la API Key creada en https://www.themoviedb.org/.
 
-## Flujo del Pipeline CI/CD
+## Flujo del Pipeline CI/CD:
 
 ![Flujo del Pipeline](/images/flujo-pipeline.png)
 
@@ -30,7 +30,7 @@ La arquitectura implementada consta de los siguientes componentes:
 4. **Fase de Despliegue**: CodeDeploy implementa la aplicación en el entorno de destino.
 5. **Monitoreo**: CloudWatch supervisa el rendimiento y la salud de la aplicación.
 
-## Estructura del Proyecto
+## Estructura del Proyecto:
 
 ```
 Netflix-project/
